@@ -3,11 +3,11 @@ import os
 
 #Funtion to rename all of the files in a specified folder to strip all numbers
 #   from the file name
-def rename_files():
+def rename_files(folder_name):
     #(1) Define the current working directory
     original_path = os.getcwd()
     #(2) Define the path to the .JPG files to rename
-    images_file_path = "" #"[FULL PATH TO FOLDER CONTAINING .JPG FILES]"
+    images_file_path = folder_name #"[FULL PATH TO FOLDER CONTAINING .JPG FILES]"
     #(3) get the files names from a folder
     file_list = os.listdir(images_file_path)
     #print(file_list)
@@ -25,4 +25,5 @@ def rename_files():
     #(9) Change the current working directory back to the original_path
     os.chdir(original_path)
 
-rename_files()
+folder = input("What is the name of the folder to decode?")
+rename_files(folder)

@@ -4,11 +4,11 @@ import random
 
 #Function to rename .JPG files to include random numbers at the start, end,
 #   and somewhere else before the "." in order to jumble and alhabetized file list
-def rename_files():
+def rename_files(folder_name):
     #(1) Define the current working directory
     original_path = os.getcwd()
     #(2) Define the path to the .JPG files to rename
-    images_file_path = "" #"[FULL PATH TO FOLDER CONTAINING .JPG FILES]"
+    images_file_path = folder_name #"[FULL PATH TO FOLDER CONTAINING .JPG FILES]"
     #(3) get the files names from th folder
     file_list = os.listdir(images_file_path)
     #print(file_list)
@@ -35,5 +35,3 @@ def rename_files():
         print(printout.format(file_name, new_file_name))
     #(12) Change the current working directory back to the original_path
     os.chdir(original_path)
-
-rename_files()
